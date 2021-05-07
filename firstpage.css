@@ -43,7 +43,7 @@ ul li:hover {
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
-  background: #888;
+  background: black;
   color: #fff;
   text-decoration: line-through;
 }
@@ -71,13 +71,13 @@ ul li.checked::before {
 }
 
 .close:hover {
-  background-color: #f44336;
+  background-image: linear-gradient()
   color: white;
 }
 
 /* Style the header */
 .header {
-  background-color: #f44336;
+  background-image: linear-gradient(to right,#5f2c82 , #49a09d);
   padding: 30px 40px;
   color: white;
   text-align: center;
@@ -105,8 +105,8 @@ input {
 .addBtn {
   padding: 10px;
   width: 25%;
-  background: #d9d9d9;
-  color: #555;
+  background:linear-gradient(to right, rgb(77, 184, 77), white);
+  color: black;
   float: left;
   text-align: center;
   font-size: 16px;
@@ -116,5 +116,5 @@ input {
 }
 
 .addBtn:hover {
-  background-color: #bbb;
+  background-color: white;
 }
