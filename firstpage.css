@@ -5,7 +5,8 @@ body {
 }
 
 h2 {
-  font-family: Hevetica, sans-serif;  
+  font-family: Hevetica, sans-serif;
+  font-weight: 1000;
 }
 
 /* Include the padding and border in an element's total width and height */
@@ -75,7 +76,20 @@ ul li.checked::before {
   padding: 12px 16px 12px 16px;
 }
 
+/* Style the prioritize button */
+.prioritize {
+  position: absolute;
+  right: 50px;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
 .close:hover {
+  background-image: linear-gradient(to right,#5f2c82, #49a09d);
+  color: white;
+}
+
+.prioritize:hover {
   background-image: linear-gradient(to right,#5f2c82, #49a09d);
   color: white;
 }
