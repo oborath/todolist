@@ -11,11 +11,10 @@
   <input type="text" id="myInput" placeholder="Title...">
   <span onclick="newElement()" class="addBtn">Add</span>
   <span onclick="MoveToTop(lst)">
-  <!-- //<span onclick="MoveToTop(lst)" class="prioBtn">Prioritize</span> -->
 </div>
 
 <ul id="myUL">
-    <li class="checked">Go to the gym</li>
+  <li class="checked">Go to the gym</li>
   <li>Finish project A</li>
   <li>Complete implementing function B</li>
   <li>Meet with the team</li>
@@ -34,27 +33,6 @@ for (i = 0; i < myNodelist.length; i++) {
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
-}
-
-// Create a "prioritize" button and append it to each list item 
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("prioritize");
-  span.className = "prioritize";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-//click on a prioritize button to move the list item to the top of the list
-var prioritize = document.getElementsByClassName("prioritize");
-var i;
-for (i = 0; i < prioritize.length; i++) {
-  prioritize[i].onclick = function() {
-    var div = this.parentElement;
-    // div.style.display = "none";
-  }
 }
 
 // Click on a close button to hide the current list item
@@ -90,17 +68,10 @@ function newElement() {
   document.getElementById("myInput").value = "";
 
   var span = document.createElement("SPAN");
-  var span2 = document.createElement("SPAN2");
   var txt = document.createTextNode("\u00D7");
-  var prior = document.createTextNode("prioritize");
-
   span.className = "close";
-  span2.className = "prioritize";
-
   span.appendChild(txt);
-  span2.appendChild(prior);
   li.appendChild(span);
-  li.appendChild(span2);
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
@@ -108,31 +79,9 @@ function newElement() {
       div.style.display = "none";
     }
   }
-
-  for (i = 0; i < prioritize.length; i++) {
-    prioritize[i].onclick = function() {
-    var div = this.parentElement;
-   
-    }
-  }
-}
-
-function MoveToTop(lst) {
-   var selected = new Array();
-        var options = lst.getElementsByTagName("OPTION");
-        for (var i = 0; i < options.length; i++) {
-            if (options[i].selected) {
-                selected.push(options[i]);
-                lst.removeChild(options[i]);
-            }
-        }
-        for (var i = 0; i < selected.length; i++) {
-            lst.insertBefore(selected[i], options[0]);
-        }
 }
 
 </script>
-
 </body>
 </html>
 
