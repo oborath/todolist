@@ -10,16 +10,17 @@
   <h2 style="margin:5px">TO DO LIST</h2>
   <input type="text" id="myInput" placeholder="Title...">
   <span onclick="newElement()" class="addBtn">Add</span>
-  <span onclick="MoveToTop(lst)" class="prioBtn">Prioritize</span>
+  <span onclick="MoveToTop(lst)">
+  <!-- //<span onclick="MoveToTop(lst)" class="prioBtn">Prioritize</span> -->
 </div>
 
 <ul id="myUL">
-  <li>Hit the gym</li>
-  <li class="checked">Pay bills</li>
-  <li>Meet George</li>
-  <li>Buy eggs</li>
-  <li>Read a book</li>
-  <li>Organize office</li>
+    <li class="checked">Go to the gym</li>
+  <li>Finish project A</li>
+  <li>Complete implementing function B</li>
+  <li>Meet with the team</li>
+  <li>Read the document</li>
+  <li>Document code</li>
 </ul>
 
 <script>
@@ -36,7 +37,6 @@ for (i = 0; i < myNodelist.length; i++) {
 }
 
 // Create a "prioritize" button and append it to each list item 
-// moves the item up after pressing prioritize button 
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -53,7 +53,7 @@ var i;
 for (i = 0; i < prioritize.length; i++) {
   prioritize[i].onclick = function() {
     var div = this.parentElement;
-    div.style.display = "none";
+    // div.style.display = "none";
   }
 }
 
@@ -74,7 +74,7 @@ list.addEventListener('click', function(ev) {
     ev.target.classList.toggle('checked');
   }
 }, false);
-//Enter
+
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
@@ -90,33 +90,31 @@ function newElement() {
   document.getElementById("myInput").value = "";
 
   var span = document.createElement("SPAN");
+  var span2 = document.createElement("SPAN2");
   var txt = document.createTextNode("\u00D7");
-  var prioritize = document.createTextNode("prioritize");
+  var prior = document.createTextNode("prioritize");
 
   span.className = "close";
-  span.className = "prioritize";
-  span.appendChild(prioritize);
-  span.appendChild(txt);
-  li.appendChild(span);
+  span2.className = "prioritize";
 
-   for (i = 0; i < close.length; i++) {
+  span.appendChild(txt);
+  span2.appendChild(prior);
+  li.appendChild(span);
+  li.appendChild(span2);
+
+  for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-       var div = this.parentElement;
+      var div = this.parentElement;
       div.style.display = "none";
     }
-    
-   }
-  //  span.className = "prioritize";
-  //  span.appendChild(prioritize);
-  //  li.appendChild(span);
+  }
 
   for (i = 0; i < prioritize.length; i++) {
     prioritize[i].onclick = function() {
     var div = this.parentElement;
-    div.style.display = "none";
+   
     }
   }
-
 }
 
 function MoveToTop(lst) {
@@ -137,5 +135,7 @@ function MoveToTop(lst) {
 
 </body>
 </html>
+
+
 
 
